@@ -6,15 +6,15 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 require('dotenv').config();
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(require('../agrispot/agrispot-93d53-firebase-adminsdk-ht8vl-4ff5ed16e6.json')), // Add path to Firebase service account key
-// });
+admin.initializeApp({
+  credential: admin.credential.cert(require('../agrispot/agrispot-93d53-firebase-adminsdk-ht8vl-4ff5ed16e6.json')), // Add path to Firebase service account key
+});
 
 let otpStore = {};  // Store OTPs in memory for validation
 
 // Nodemailer configuration for OTP and email sending
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'Gmail',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -23,14 +23,12 @@ const transporter = nodemailer.createTransport({
 
 // Send OTP to the user's email
 exports.sendOtp = async (req, res) => {
-  console.log("enterd to send otp")
   const { email } = req.body;
   const normalizedEmail = email.toLowerCase();  // Normalize email for case insensitivity
 
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
   otpStore[normalizedEmail] = otp;  // Store OTP in memory
-console.log(otp)
-console.log(normalizedEmail)
+
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: normalizedEmail,

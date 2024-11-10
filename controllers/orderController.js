@@ -1,4 +1,4 @@
-const Order = require('../models/order'); // Import the Order model
+const Order = require('../models/Order'); // Import the Order model
 const Product = require('../models/product'); // Import the Product model
 
 // Controller to fetch orders for the authenticated buyer

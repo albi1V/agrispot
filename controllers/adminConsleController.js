@@ -1,6 +1,6 @@
 const User = require('../models/userModel'); // Adjust the path based on your project structure
 const Product = require('../models/product'); // Adjust the path based on your project structure
-const Post = require('../models/blog'); // Adjust the path based on your project structure
+const Post = require('../models/Blog'); // Adjust the path based on your project structure
 
 // Get the count of sellers
 const getSellersCount = async (req, res) => {

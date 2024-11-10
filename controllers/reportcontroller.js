@@ -1,5 +1,5 @@
 const Report = require('../models/reported');
-const Blog = require('../models/blog');
+const Blog = require('../models/Blog');
 const User = require('../models/userModel');
 
 // Submit a new report

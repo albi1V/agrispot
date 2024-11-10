@@ -1,6 +1,6 @@
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
-const Order = require('../models/order'); // Import your Order model
+const Order = require('../models/Order'); // Import your Order model
 require('dotenv').config();
 
 // Create an instance of Razorpay

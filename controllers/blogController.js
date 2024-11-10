@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Blog = require("../models/blog");
+const Blog = require("../models/Blog");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
@@ -149,7 +149,8 @@ const getBlogImages = async (req, res) => {
 const getAllBlogs = async (req, res) => {
   try {
     // Fetch all blogs from the database excluding those with status 'blocked'
-    const blogs = await Blog.find({ status: { $ne: 'blocked' } });
+    const blogs = await Blog.find({ status: { $ne: 'blocked' } })
+                            .sort({createdAt:-1});
 
     if (!blogs || blogs.length === 0) {
       return res.status(404).json({ message: "No blogs available" });
