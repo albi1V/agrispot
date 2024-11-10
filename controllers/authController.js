@@ -6,9 +6,9 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 require('dotenv').config();
 
-admin.initializeApp({
-  credential: admin.credential.cert(require('../agrispot/agrispot-93d53-firebase-adminsdk-ht8vl-4ff5ed16e6.json')), // Add path to Firebase service account key
-});
+// admin.initializeApp({
+//   credential: admin.credential.cert(require('../agrispot/agrispot-93d53-firebase-adminsdk-ht8vl-4ff5ed16e6.json')), // Add path to Firebase service account key
+// });
 
 let otpStore = {};  // Store OTPs in memory for validation
 

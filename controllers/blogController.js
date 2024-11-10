@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Blog = require("../models/Blog");
+const Blog = require("../models/blog");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
